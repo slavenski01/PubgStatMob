@@ -1,7 +1,7 @@
 package com.example.pubgstatmob.di.network
 
 import com.example.pubgstatmob.data.api.ApiConsts
-import com.example.pubgstatmob.data.api.StatPlayerApi
+import com.example.pubgstatmob.data.api.PlayerApi
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -42,7 +42,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providePlayerStatApi(retrofit: Retrofit): StatPlayerApi {
-        return retrofit.create(StatPlayerApi::class.java)
+    fun providePlayerStatApi(retrofit: Retrofit): PlayerApi {
+        return retrofit.create(PlayerApi::class.java)
     }
 }

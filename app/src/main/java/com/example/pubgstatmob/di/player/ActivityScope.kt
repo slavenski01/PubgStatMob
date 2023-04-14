@@ -1,4 +1,4 @@
-package com.example.pubgstatmob.di.stat
+package com.example.pubgstatmob.di.player
 
 import javax.inject.Scope
 

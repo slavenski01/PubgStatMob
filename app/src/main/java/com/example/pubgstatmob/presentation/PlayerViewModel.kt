@@ -3,19 +3,19 @@ package com.example.pubgstatmob.presentation
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pubgstatmob.data.stat.StatRepo
+import com.example.pubgstatmob.data.player.PlayerRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class StatViewModel(
-    private val statRepo: StatRepo
+class PlayerViewModel(
+    private val playerRepo: PlayerRepo
 ) : ViewModel() {
 
-    fun getPlayerStat() {
+    fun getPlayerStat(playerName: String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val response = statRepo.getPlayerStat()
+                val response = playerRepo.getPlayerStat(playerName)
                 Log.e("StatViewModel", "${response.body()}")
             }
         }
